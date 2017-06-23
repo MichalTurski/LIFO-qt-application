@@ -8,8 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->outputField->setReadOnly(true);
-    ui->inputField->setPlaceholderText("Tu wprowadź tekst.");
-    ui->outputField->setPlaceholderText("Tu będzie prezentowane wyjście.");
+    ui->inputField->setPlaceholderText("Tu wprowadź tekst");
+    ui->outputField->setPlaceholderText("Tu będzie prezentowane wyjście");
 }
 
 MainWindow::~MainWindow()
@@ -36,10 +36,11 @@ void MainWindow::on_zapiszButton_clicked()
     if(str.isEmpty())
     {
         QMessageBox messageBox;
-        messageBox.critical(0,"Błąd","Nie Można wprowadzić pustego tekstu");
+        messageBox.critical(0,"Błąd","Nie można wprowadzić pustego tekstu");
         messageBox.setFixedSize(500,200);
     }
     else{
         lifoQueue.push(str);
+        ui->inputField->clear();
     }
 }
